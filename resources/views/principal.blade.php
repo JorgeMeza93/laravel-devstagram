@@ -1,4 +1,4 @@
 @extends("layouts.app")
 @section("titulo")
-    Página Principal
+   Inicio
 @endsection
