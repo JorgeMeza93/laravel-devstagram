@@ -15,7 +15,7 @@
             <div class="container mx-auto flex justify-between items-center">
                 <h1 class="text-3xl font-black">DevStagram</h1>
                 <nav >
-                    <a class="font-bold uppercase text-gray-600 text-sm" href="#">Login</a>
+                    <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route("login")}}">Login</a>
                     <a class="font-bold uppercase text-gray-600 text-sm" href="{{route('register')}}">Crear Cuenta</a>
                 </nav>
             </div>
