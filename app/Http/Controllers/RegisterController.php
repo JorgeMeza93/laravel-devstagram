@@ -33,6 +33,6 @@ class RegisterController extends Controller {
             "password" => $request->password
         ]);
         //Redireccionamiento
-        return redirect()->route("post.index");
+        return redirect()->route("posts.index");
     }
 }

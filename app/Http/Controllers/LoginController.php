@@ -15,5 +15,9 @@ class LoginController extends Controller
             "email" => "required|email|",
             "password" => "required|"
         ]);
+        if( !auth()->attempt($request->only("email", "password"))){
+            return back()->with("mensaje", "Credenciales no válidas");
+        }
+        return redirect()->route("posts.index");
     }
 }
