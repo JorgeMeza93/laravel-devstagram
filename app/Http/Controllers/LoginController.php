@@ -12,12 +12,12 @@ class LoginController extends Controller
     }
     public function store(Request $request){
         $this->validate($request, [
-            "email" => "required|email|",
+            "email" => "required|email",
             "password" => "required"
         ]);
         if( !auth()->attempt($request->only("email", "password"), $request->remember)){
             return back()->with("mensaje", "Credenciales no válidas");
         }
-        return redirect()->route("posts.index");
+        return redirect()->route("posts.index", auth()->user()->username);
     }
 }
