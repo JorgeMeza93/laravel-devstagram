@@ -15,7 +15,7 @@
             </form>
         </div>
         <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
-            <form action="{{ route("register") }}" method="POST">
+            <form action="{{ route("posts.store") }}" method="POST">
                 @csrf
                 <div class="mb-5">
                     <label class="mb-2 block uppercase text-gray-500 font-bold" for="titulo">Título</label>
@@ -29,7 +29,7 @@
                     <textarea id="descripcion" name="descripcion" placeholder="Descripción de la publicación" class="border p-3 w-full rounded-lg @error("descripcion") border-red-500 @enderror">
                         {{ old("titulo") }}
                     </textarea>
-                    @error('name')
+                    @error('descripcion')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }} </p>
                     @enderror
                 </div>

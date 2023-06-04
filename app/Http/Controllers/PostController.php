@@ -13,7 +13,6 @@ class PostController extends Controller
         $this->middleware("auth");
     }
     public function index(User $user){
-        
         return view("dashboard", [
             "user"=> $user 
         ]);
@@ -21,4 +20,11 @@ class PostController extends Controller
     public function create(){
         return view("posts.create");
     }
+    public function store(Request $request){
+        $this->validate($request, [
+            "titulo" => "required|max:125",
+            "descripcion" => "required|max:2500"
+        ]);
+    }
+
 }
