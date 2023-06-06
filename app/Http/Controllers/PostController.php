@@ -14,8 +14,11 @@ class PostController extends Controller
         $this->middleware("auth");
     }
     public function index(User $user){
+        $posts = Post::where("user_id", $user->id)->get();
+
         return view("dashboard", [
-            "user"=> $user 
+            "user"=> $user,
+            "posts" => $posts 
         ]);
     }
     public function create(){
