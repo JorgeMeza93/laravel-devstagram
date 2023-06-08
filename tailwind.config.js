@@ -2,7 +2,8 @@
 export default {
   content: [
     "./resources/**/*.blade.php",
-    "./resources/**/*.js"
+    "./resources/**/*.js",
+    "./vendor/laravel/framework/src/Iluminate/Pagination/resources/views/*.blade.php"
   ],
   theme: {
     extend: {},
