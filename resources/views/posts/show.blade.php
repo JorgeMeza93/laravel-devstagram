@@ -11,6 +11,10 @@
             </div>
             <div>
                 <p class="font-bold">{{ $post->user->username }}</p>
+                <p class="text-sm text-gray-500">{{ $post->created_at->diffForHumans()}}</p>
+                <p class="mt-5">
+                    {{ $post->descripcion }}
+                </p>
             </div>
         </div>
         <div class="md:w-1/2">

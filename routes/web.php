@@ -38,4 +38,4 @@ Route::post("/imagenes", [ImagenController::class, "store"])->name("imagenes.sto
 
 
 
-Route::post("/PIPO", [ImagenController::class, "store"])->name("imagenes.store");
+/*Route::post("/PIPO", [ImagenController::class, "store"])->name("imagenes.store"); */
