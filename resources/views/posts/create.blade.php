@@ -27,7 +27,7 @@
                 <div class="mb-5">
                     <label class="mb-2 block uppercase text-gray-500 font-bold" for="descripcion">Descripción</label>
                     <textarea id="descripcion" name="descripcion" placeholder="Descripción de la publicación" class="border p-3 w-full rounded-lg @error("descripcion") border-red-500 @enderror">
-                        {{ old("titulo") }}
+                        {{ old("descripcion") }}
                     </textarea>
                     @error('descripcion')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }} </p>
