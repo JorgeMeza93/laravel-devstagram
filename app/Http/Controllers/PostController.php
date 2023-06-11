@@ -11,7 +11,7 @@ class PostController extends Controller
     //Al momento de ser instanciado el constructor ejecuta lo que hay dentro de este método
     public function __construct()
     {
-        $this->middleware("auth");
+        $this->middleware("auth")->except(["show", "index"]);
     }
     public function index(User $user){
         $posts = Post::where("user_id", $user->id)->paginate(5);
