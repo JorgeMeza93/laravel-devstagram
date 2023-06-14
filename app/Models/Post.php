@@ -14,8 +14,13 @@ class Post extends Model
         "imagen",
         "user_id"
     ];
+    //Relacion
     public function user(){
         return $this->belongsTo(User::class)->select(["name", "username", "email"]);
     }
+    public function comentarios(){
+        return $this->hasMany(Comentario::class);
+    }
+
 
 }

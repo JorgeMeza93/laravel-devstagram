@@ -40,6 +40,21 @@
                         <input type="submit" value="Comentar" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg" />
                     </form>
                 @endauth
+                <div class="bg-white shadow mb-5 max-h-96 overflow-y-scroll mt-10">
+                    @if($post->comentarios->count())
+                        @foreach( $post->comentarios as $comentario)
+                            <div class="p-5 border-gray-400 border-b">
+                                <a href="{{ route('posts.index', $comentario->user) }}" class="font-bold text-sm">
+                                    {{ $comentario->user->username }}
+                                </a>
+                                <p>{{ $comentario->comentario }}</p>
+                                <p class="text-sm text-gray-400">{{ $comentario->created_at->diffForHumans() }}</p>
+                            </div>
+                        @endforeach
+                    @else
+                        <p class="p-10 text-center">No hay comentarios aún</p>
+                    @endif
+                </div>
             </div>
         </div>
     </div>
