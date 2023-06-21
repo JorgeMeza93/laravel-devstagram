@@ -38,6 +38,7 @@ Route::get("/{user:username}/posts/{post}", [PostController::class, "show"])->na
 Route::post("/{user:username}/posts/{post}", [ComentarioController::class, "store"])->name("comentarios.store");
 Route::delete("/posts/{post}", [PostController::class, "destroy"])->name("posts.destroy");
 Route::post("/posts/{post}/likes", [LikeController::class, "store"])->name("posts.likes.store");
+Route::delete("/posts/{post}/likes", [LikeController::class, "destroy"])->name("posts.likes.destroy");
 
 Route::post("/imagenes", [ImagenController::class, "store"])->name("imagenes.store");
 
