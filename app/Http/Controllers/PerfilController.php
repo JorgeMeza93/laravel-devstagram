@@ -16,4 +16,10 @@ class PerfilController extends Controller
        return view(("perfil.index"));
     }
 
+    public function store(Request $request){
+        $this->validate($request, [
+            
+        ]);
+    }
+
 }
