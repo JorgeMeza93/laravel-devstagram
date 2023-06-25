@@ -7,7 +7,7 @@
     <div class="flex justify-center">
         <div class="w-full md:w-8/12 lg:w-6/12 flex flex-col items-center md:flex-row">
             <div class="w-8/12 lg:w-6/12 px-5">
-                <img src="{{ asset("img/usuario.svg") }}" alt="imagen-usuario-logo" />
+                <img src="{{  $user->imagen ? asset('perfiles') . '/' . $user->imagen : asset('img/usuario.svg') }}" alt="imagen-usuario-logo" />
             </div>
             <div class="md:w-8/12 lg:w-6/12 px-5 flex flex-col items-center md:justify-center md:items-start py-10 md:py-10">
                 <div class="flex items-center gap-2">
@@ -29,7 +29,8 @@
                     0 <span class="font-normal">Siguiendo</span>
                 </p>
                 <p class="text-gray-800 text-sm mb-3 font-bold">
-                    0 <span class="font-normal">Post</span>
+                    {{ $user->posts->count() }} 
+                    <span class="font-normal">Post</span>
                 </p>
             </div>
         </div>

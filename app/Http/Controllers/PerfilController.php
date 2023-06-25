@@ -36,9 +36,9 @@ class PerfilController extends Controller
         }
         $usuario = User::find(auth()->user()->id);
         $usuario->username = $request->username;
-        $usuario->imagen = $nombreImagen ?? "";
+        $usuario->imagen = $nombreImagen ?? auth()->user()->imagen ?? null;
         $usuario->save();
-        return redirect()->route("post.index", $usuario->username);
+        return redirect()->route("posts.index", $usuario->username);
     }
 
 }
