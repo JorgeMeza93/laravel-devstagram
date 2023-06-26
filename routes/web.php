@@ -10,6 +10,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ComentarioController;
+use App\Http\Controllers\FollowerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,8 @@ Route::delete("/posts/{post}/likes", [LikeController::class, "destroy"])->name("
 
 Route::post("/imagenes", [ImagenController::class, "store"])->name("imagenes.store");
 
+Route::post("/{user:username}/follow", [FollowerController::class, "store"])->name("user.follow");
+Route::delete("/{user:username}/unfollow", [FollowerController::class, "destroy"])->name("user.unfollow");
 
 
 /*Route::post("/PIPO", [ImagenController::class, "store"])->name("imagenes.store"); */
