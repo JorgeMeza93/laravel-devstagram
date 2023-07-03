@@ -23,7 +23,7 @@
                     @endauth
                 </div>
                 <p class="text-gray-800 text-sm mb-3 font-bold mt-5">
-                    0 <span class="font-normal">Seguidores</span>
+                    {{ $user->followers->count() }} <span class="font-normal">Seguidores</span>
                 </p>
                 <p class="text-gray-800 text-sm mb-3 font-bold">
                     0 <span class="font-normal">Siguiendo</span>
